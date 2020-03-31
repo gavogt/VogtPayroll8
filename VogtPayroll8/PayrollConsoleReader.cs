@@ -11,7 +11,7 @@ namespace VogtPayroll8
             var empName = "0";
             var hoursWorked = 0;
             var payrate = 0m;
-            do
+            while(empName == "0")
             {
                 Console.Write("Enter employee's name or 0 to quit: ");
                 empName = Console.ReadLine();
@@ -29,7 +29,8 @@ namespace VogtPayroll8
                 Console.Write("Enter employee's pay rate: ");
                 payrate = Convert.ToDecimal(Console.ReadLine());
 
-            } while (empName != "0");
+            } 
+
 
 
             return new Employee(empName, hoursWorked, payrate);
