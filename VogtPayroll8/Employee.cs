@@ -17,6 +17,10 @@ namespace VogtPayroll8
             _empPayrate = empPayrate;
         }
 
+        #region
+        /// <summary>
+        /// Calculate gross pay
+        /// </summary>
         public void CalcGrossPay()
         {
             if (_empHoursWorked > 40)
@@ -31,18 +35,20 @@ namespace VogtPayroll8
 
             }
         }
+        #endregion
 
+        #region CalcOvertimePay
+        /// <summary>
+        /// Calculate overtime pay
+        /// </summary>
+        /// <returns>Overtime pay</returns>
         public decimal CalcOvertimePay()
         {
             int baseHours = 40;
             return ((1.5m * _empPayrate) * (_empHoursWorked - baseHours));
 
         }
+        #endregion
 
-        public void DisplayEmployeeInfo(Employee emp)
-        {
-            CalcGrossPay();
-
-        }
     }
 }
