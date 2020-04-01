@@ -6,7 +6,20 @@ namespace VogtPayroll8
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Run(new PayrollConsoleReader());
+        }
+       
+        public static void Run(PayrollConsoleReader payrollConsoleReader)
+        {
+            bool run = true;
+            while (run)
+            {
+                Employee emp = default;
+
+                emp = payrollConsoleReader.ReadEmployeeFromConsole();
+                emp.CalcGrossPay();
+            }
+
         }
     }
 }
